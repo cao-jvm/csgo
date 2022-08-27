@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>csgo App</title>
+    <script type="module" crossorigin src="/assets/index.71d57ebe.js"></script>
+    <link rel="stylesheet" href="/assets/index.a434e59d.css">
+  </head>
+  <body>
+    收购价: <input type="text" id="c" name="c" size="10">
+    <p></p>
+    售价：&nbsp;&nbsp;<input type="text" id="k" name="k" size="10">
+    <p></p>
+    回报率:&nbsp;<input type="text" id="z" name="z" size="10"><b>%</b>
+    <p></p>
+    利润:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="g" name="g" size="10">￥
+    <p></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="getValue()">计算</button>
+    <script>
+        function getValue(){
+          var buyPrice =parseInt(document.getElementById("c").value);
+          var salePrice = parseInt(document.getElementById("k").value);
+          var handling = 0.025;
+          var thandling = ((salePrice * (1-handling) -buyPrice)/buyPrice);
+          var z = ((salePrice * (1-handling) -buyPrice)/buyPrice * 100);
+          var g = buyPrice * thandling;
+          document.getElementById("z").value = z;
+          document.getElementById("g").value = g;
+}
+
+    </script>
+
+</html>
